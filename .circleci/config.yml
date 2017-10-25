@@ -116,6 +116,10 @@ jobs:
           name: Install github-release
           command: go get github.com/aktau/github-release
 
+      - run:
+          name: Create GitHub release
+          command: githun-release edit --user $CIRCLE_PROJECT_USERNAME --repo $CIRCLE_PROJECT_REPONAME --tag $CIRCLE_TAG --description "$(cat CHANGELOG.md)"
+
 workflows:
   version: 2
 
@@ -141,7 +145,7 @@ workflows:
 
       - release:
           requires:
-            - lint
+            - changelog
           filters:
             <<: *default_filters
             branches:
