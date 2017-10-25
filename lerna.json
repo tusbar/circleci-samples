@@ -1,6 +1,6 @@
 {
   "changelog": {
-    "repo": "etalab/geo.data.gouv.fr",
+    "repo": "tusbar/circleci-samples",
     "labels": {
       "bug": ":bug: Bug Fix",
       "build": ":building_construction: Build Process",
