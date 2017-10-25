@@ -11,6 +11,7 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
+    "lerna-changelog": "^0.7.0",
     "xo": "^0.18.2"
   },
   "xo": {
