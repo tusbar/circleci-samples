@@ -1,0 +1,13 @@
+{
+  "changelog": {
+    "repo": "etalab/geo.data.gouv.fr",
+    "labels": {
+      "bug": ":bug: Bug Fix",
+      "build": ":building_construction: Build Process",
+      "cleanup": ":shower: Cleanup",
+      "enhancement": ":rocket: Enhancement",
+      "performance": ":racehorse: Performance"
+    }
+  },
+  "cacheDir": ".changelog"
+}
