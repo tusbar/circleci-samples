@@ -7,7 +7,7 @@
       "cleanup": ":shower: Cleanup",
       "enhancement": ":rocket: Enhancement",
       "performance": ":racehorse: Performance"
-    }
-  },
-  "cacheDir": ".changelog"
+    },
+    "cacheDir": ".changelog"
+  }
 }
