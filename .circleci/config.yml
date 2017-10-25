@@ -79,6 +79,33 @@ jobs:
           command: yarn lint
 
 
+  changelog:
+    <<: *nodejs_container
+    steps:
+      - *attach_workspace
+      - *restore_node_modules
+
+      - run:
+          name: Generate changelog
+          command: |
+            if [ $CIRCLE_TAG ]; then
+              echo "[+] Running for tag $CIRCLE_TAG"
+
+              node_modules/.bin/lerna-changelog --tag-from $(git tag | grep $CIRCLE_TAG -B1 | head -1) --tag-to $CIRCLE_TAG > CHANGELOG.md
+            else
+              node_modules/.bin/lerna-changelog --tag-from $(git tag | tail -1) > CHANGELOG.md
+            fi
+
+      - run:
+          name: Display changelog
+          command: cat CHANGELOG.md
+
+      - persist_to_workspace:
+          name: Persist changelog
+          root: *workspace_root
+          paths:
+            - CHANGELOG.md
+
   release:
     <<: *golang_container
     steps:
@@ -103,6 +130,11 @@ workflows:
           filters: *default_filters
 
       - lint:
+          requires:
+            - install
+          filters: *default_filters
+
+      - changelog:
           requires:
             - install
           filters: *default_filters
