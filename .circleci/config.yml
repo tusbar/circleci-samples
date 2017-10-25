@@ -118,7 +118,7 @@ jobs:
 
       - run:
           name: Create GitHub release
-          command: github-release edit --user $CIRCLE_PROJECT_USERNAME --repo $CIRCLE_PROJECT_REPONAME --tag $CIRCLE_TAG --description "$(cat CHANGELOG.md)"
+          command: github-release release --user $CIRCLE_PROJECT_USERNAME --repo $CIRCLE_PROJECT_REPONAME --tag $CIRCLE_TAG --description "$(cat CHANGELOG.md)"
 
 workflows:
   version: 2
