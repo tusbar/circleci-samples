@@ -1,0 +1,20 @@
+{
+  "name": "circleci-samples",
+  "version": "1.0.0",
+  "description": "Test repository for CircleCI 2.0",
+  "main": "index.js",
+  "scripts": {
+    "lint": "xo"
+  },
+  "repository": "git@github.com:tusbar/circleci-samples.git",
+  "author": "Bertrand Marron <bertrand.marron@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "xo": "^0.18.2"
+  },
+  "xo": {
+    "semicolon": false,
+    "space": 2
+  }
+}
