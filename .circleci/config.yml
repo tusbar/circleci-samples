@@ -85,11 +85,11 @@ jobs:
       - *attach_workspace
       - *restore_node_modules
 
-      - restore_cache:
-          name: Restore changelog cache
-          keys:
-            - v1-samples-changelog-{{ .BuildNum }}
-            - v1-samples-changelog-
+      # - restore_cache:
+      #     name: Restore changelog cache
+      #     keys:
+      #       - v1-samples-changelog-{{ .BuildNum }}
+      #       - v1-samples-changelog-
 
       - run:
           name: Generate changelog
@@ -104,11 +104,11 @@ jobs:
               node_modules/.bin/lerna-changelog > CHANGELOG.md
             fi
 
-      - save_cache:
-          name: Save changelog cache
-          key: v1-samples-changelog-{{ .BuildNum }}
-          paths:
-            - .changelog/
+      # - save_cache:
+      #     name: Save changelog cache
+      #     key: v1-samples-changelog-{{ .BuildNum }}
+      #     paths:
+      #       - .changelog/
 
       - run:
           name: Display changelog
