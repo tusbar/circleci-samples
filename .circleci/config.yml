@@ -16,7 +16,7 @@ defaults:
 
   filters: &default_filters
     tags:
-      only: '/v[0-9]+(\.[0-9]+)*/'
+      only: /v[0-9]+(\.[0-9]+)*/
 
   attach_workspace: &attach_workspace
     attach_workspace:
@@ -163,4 +163,4 @@ workflows:
           filters:
             <<: *default_filters
             branches:
-              ignore: '/.*/'
+              ignore: /.*/
